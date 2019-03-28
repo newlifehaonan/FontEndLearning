@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Basic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h1> Selector </h1>
+        <dl>
+            <dt>Simple Selector</dt>
+            <dd><span>".":</span>Class</dd>
+            <dd><span>"#":</span>ID</dd>
+            <dd><span>"Element":</span>Any HTML element</dd>
+
+            <dt>Attribute Selector</dt>
+            <dd><span>[Attr]:</span>This selector will select all elements with the attribute attr, whatever its value.</dd>
+            <dd><span>[Attr=val]:</span>This selector will select all elements with the attribute attr, but only if its value is val</dd>
+            <dd><span>[Attr~=val]:</span>This selector will select all elements with the attribute attr, but only if  val is one of a space-separated list of words contained in attr's value.</dd>
+            <dd><span>[Attr^=val]:</span>This selector will select all elements with the attribute attr for which the value starts with val</dd>
+            <dd><span>[Attr$=val]:</span>This selector will select all elements with the attribute attr for which the value ends with val</dd>
+            <dd><span>[Attr*=val]:</span> This selector will select all elements with the attribute attr for which the value contains the substring val</dd>
+
+            <dt>Pseudo-class Selector</dt>
+            <dd>A CSS pseudo-class is a keyword added to the end of a selector, preceded by a colon (:), which is used to specify that you want to style the selected element but only when it is in a certain state. For example, you might want to style a link element only when it is being hovered over by the mouse pointer, or a checkbox when it is disabled or checked, or an element that is the first child of its parent in the DOM tree</dd>
+            
+            <dt><a href="psedudo.html">Pseudo-elements Selector</a></dt>
+            <dd>Pseudo-elements are very much like pseudo-classes, but they have differences. They are keywords, this time preceded by two colons (::), that can be added to the end of selectors to select a certain part of an element.</dd>
+
+        </dl>
+    </div>
+
+    <div>
+        <h1>Styling Text</h1>
+        <p>The CSS properties used to style text generally fall into two categories, which we'll look at separately in this article:</p>
+        <ul>
+            <li><span class="text_bold">Font Style:</span>Properties that affect the font that is applied to the text, affecting what font is applied, how big it is, whether it is bold, italic, etc.</li>
+            <li><span class="text_bold">Text Layout Style:</span>Properties that affect the spacing and other layout features of the text, allowing manipulation of, for example, the space between lines and letters, and how the text is aligned within the content box.</li>
+        </ul>
+
+        <h2>Five Generic Font name</h2>
+        <p>CSS defines five generic names for fonts:  serif, sans-serif, monospace, cursive and fantasy. Those are very generic and the exact font face used when using those generic names is up to each browser and can vary for each operating system they are running on. It represents a worst case scenario where the browser will try to do its best to provide at least a font that looks appropriate.</p>
+        
+        <table>
+            <tr>
+                <th>Term</th>
+                <th>Defination</th>
+                <th>Example</th>
+            </tr>
+
+            <tr>
+                <td>serif</td>
+                <td>Fonts that have serifs (the flourishes and other small details you see at the ends of the strokes in some typefaces)</td>
+                <td style="font-family: serif">I Rock!</td>
+            </tr>
+            <tr>
+                <td>sans-serif</td>
+                <td>Fonts that don't have serifs.</td>
+                <td style="font-family:sans-serif">I Rock!</td>
+            </tr>
+            <tr>
+                <td>monospace</td>
+                <td>Fonts where every character has the same width, typically used in code listings</td>
+                <td style="font-family:monospace">"private static void main { system.out.println("hello world")}"</td>
+            </tr>
+            <tr>
+                <td>cursive</td>
+                <td>Fonts that are intended to emulate handwriting, with flowing, connected strokes.</td>
+                <td style="font-family:cursive">I Rock!</td>
+            </tr>
+            <tr>
+                <td>fantasy</td>
+                <td>Fonts that are intended to be decorative.</td>
+                <td style="font-family: fantasy">I Rock!</td>
+            </tr>
+        </table>
+        
+        <h2> Font stack</h2>
+        <p>Since you can't guarantee the availability of the fonts you want to use on your webpages (even a web font could fail for some reason), you can supply a font stack so that the browser has multiple fonts it can choose from. This simply involves a font-family value consisting of multiple font names separated by commas</p>
+        <p class="pre-inline">
+                p {
+                    font-family: "Trebuchet MS", Verdana, sans-serif;
+                  }
+        </p>
+
+        <h2> Font Size</h2>
+        <ul>
+            <li><span class="text_bold">px:</span>The number of pixels high you want the text to be. This is an absolute unit — it results in the same final computed value for the font on the page in pretty much any situation.</li>
+            <li><span class="text_bold">em:</span>1em is equal to the font size set on the parent element of the current element we are styling</li>
+            <li><span class="text_bold">rems:</span>These work just like ems, except that 1rem is equal to the font size set on the root element of the document (i.e. <html>)</li>
+        </ul>
+        
+        <h2> Font decoration</h2>
+        <p>You should note that text-decoration can accept multiple values at once, 
+           if you want to add multiple decorations simultaneously, 
+           <span style="text-decoration: wavy red line-through">example text-decoration: underline overline. </span>
+           Also note that text-decoration is a shorthand property for text-decoration-line, text-decoration-style, 
+           and text-decoration-color. You can use combinations of these property values to create interesting effects, 
+           for example text-decoration: line-through red wavy</p>
+
+        <h2 class="shadow"> Text Shadow </h2>
+        <ul>
+            <li><span class="text_bold">Horizontal Offset:</span>The horizontal offset of the shadow from the original text — this can take most available CSS length and size units, but you'll most commonly use px. This value has to be included.</li>
+            <li><span class="text_bold">Vertical Offset:</span>The vertical offset of the shadow from the original text; behaves basically just like the horizontal offset, except that it moves the shadow up/down, not left/right. This value has to be included.</li>
+            <li><span class="text_bold">Blur Radius:</span>The blur radius — a higher value means the shadow is dispersed more widely. If this value is not included, it defaults to 0, which means no blur. This can take most available CSS length and size units.</li>
+            <li><span class="text_bold">Base Color:</span>The base color of the shadow, which can take any CSS color unit. If not included, it defaults to black.</li>
+        </ul>
+    </div>
+
+    <div>
+        <h1> Styling List</h1>
+        <ol style="list-style:lower-roman outside">
+            <li>Web Dev</li>
+            <li>Android Dev</li>
+            <li>IOS Dev</li>
+        </ol>
+
+        <ul style="list-style: georgian">
+            <li>Web Dev</li>
+            <li>Android Dev</li>
+            <li>IOS Dev</li>
+        </ul>
+
+        <dl>
+            <dt>Web Dev</dt>
+            <dd>HTML</dd>
+            <dd>CSS</dd>
+            <dd>Javascript</dd>
+
+            <dt>Android Dev</dt>
+            <dd>Java</dd>
+            <dd>XML</dd>
+            <dd>Kotlin</dd>
+
+            <dt>IOS</dt>
+            <dd>Xcode</dd>
+            <dd>Swift</dd>
+            <dd>Cocoapod</dd>
+        </dl>
+    </div>
+
+    <div>
+        <h1> Styling Link</h1>
+        <ul class="ul_styled_list">
+            <li class="li_styled_list"><a class="a_styled_list">Alpha</a></li>
+            <li class="li_styled_list"><a class="a_styled_list">Beta</a></li>
+            <li class="li_styled_list"><a class="a_styled_list">Gama</a></li>
+            <li class="li_styled_list"><a class="a_styled_list">Theta</a></li>
+            <li class="li_styled_list"><a class="a_styled_list">Apsilon</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <h1>Background property</h1>
+        <p class="background 
+                  background--color">Simple Background with color</p>
+
+        <p class="background 
+                  background--color
+                  background--color-linear">Simple Background with linear color</p>
+
+        <p class="background 
+                  background--color 
+                  background--image">Simple Background with image</p>
+
+        <p class="background background--color 
+                  background--image 
+                  background--image-nonrepeat">Simple Background with image non-repeat</p>
+
+        <p class="background 
+                  background--color 
+                  background--image 
+                  background--image-nonrepeat 
+                  background--image-right">Simple Background with image non-repeat sit right corner</p>
+
+        <p class="background 
+                  background--color 
+                  background--image 
+                  background--image-nonrepeat
+                  background--image-right 
+                  background--image-large">Simple Background with image non-repeat sit right corner and icon large</p>
+    </div>
+
+    <div>
+        <h1>Layout</h1>
+        <dl>
+            <dt>Normal Float</dt>
+            <dd>Normal flow is how the browser lays out HTML pages by default when you do nothing to control page layout. Let's look at a quick HTML example</dd>
+            
+            <p style="
+            display: block;
+            padding: 1rem;
+            margin: 10px;
+            background: pink;
+            border: solid 2px royalblue;
+            color: black;
+            ">By default, a block level element's content is 100% of the width of its parent element, and as tall as its content.</p>
+
+            <div style="padding: 1rem; margin: 10px; display: block;">
+                <div style="display: inline;background: pink;border: solid 2px royalblue;">inline element</div>are as tall as their content, and as wide as their content. 
+                    You can't set width or height on inline elements
+
+                — they just sit inside the content of block level elements.
+            </div>
+
+            <dt>Flex Box</dt>
+            <dd>Here you will see an example of how flex box works</dd>
+
+            <div style="display: block; padding: 1rem; background-color: blanchedalmond;">
+
+                <header style="text-align:center;" class="block"> Sample Flexbox Example</header>
+
+                <section style="display: flex;flex-direction: row; flex-wrap: wrap;" class="block">
+
+                    <section style="display: flex; flex-direction: column;flex-wrap: wrap;" class="block">
+                        <div class="block">flex-direction</div>
+                        <div class="block">flex-wrap</div>
+                        <div class="block">flex: 200px</div>
+                        <div class="block">flex-grow: 1</div>
+                        <div class="block">flex-basis: 400px</div>
+                    </section>
+
+                    <section style="display: flex; 
+                                    flex-direction: row; 
+                                    flex-wrap: wrap; 
+                                    flex: 400px;
+                                    " 
+                                    class="block">
+
+                            <article class="block">
+                                One issue that arises when you have a fixed amount of width or height in your 
+                                layout is that eventually your flexbox children will overflow their container, 
+                                breaking the layout. 
+                                Here we see that the children are indeed breaking out of their container. 
+                                One way in which you can fix this is to add the flex-wrap: wrap; to your rule
+                            </article>
+
+                            <article class="block">We now have multiple rows — as many flexbox children are fitted onto each row as makes sense, 
+                                and any overflow is moved down to the next line. 
+                                The flex: 200px declaration set on the articles means that each will be at least 200px wide;
+                            </article>
+
+                            <article class="block">flex-basis: 400px, Each flex item will first be given 400px of the available space. 
+                                After that, the rest of the available space will be shared out according to the proportion units
+                            </article>
+
+                            <article class="block">
+                                    This is a unitless proportion value that dictates how much of the available space along the main axis each flex item will take up. 
+                                    In this case, we are giving each artical element a value of 1, 
+                                    which means they will all take up an equal amount of the spare space left after things like padding and margin have been set.
+                            </article>
+
+                            <article class="block">
+                                <button class="block">1</button>
+                                <button class="block">2</button>
+                                <button class="block">3</button>
+                                <button class="block">4</button>
+                                <button class="block">5</button>
+                            </article>
+
+                            <article class="block">
+                                <button class="block">1</button>
+                                <button class="block">2</button>
+                                <button class="block">3</button>
+                                <button class="block">4</button>
+                                <button class="block">5</button>
+                            </article>
+
+                            <article class="block">
+                                <button class="block">1</button>
+                                <button class="block">2</button>
+                                <button class="block">3</button>
+                                <button class="block">4</button>
+                                <button class="block">5</button>
+                            </article>
+
+                            <article class="block">
+                                <button class="block">1</button>
+                                <button class="block">2</button>
+                                <button class="block">3</button>
+                                <button class="block">4</button>
+                                <button class="block">5</button>
+                            </article>
+
+                            <article class="block">
+                                <button class="block">1</button>
+                                <button class="block">2</button>
+                                <button class="block">3</button>
+                                <button class="block">4</button>
+                                <button class="block">5</button>
+                            </article>
+                    </section>
+                </section>
+            </div>
+
+            <dt>Float Layout</dt>
+            <dd>The float property was introduced to allow web developers to implement simple layouts involving an image floating inside a column of text, with the text wrapping around the left or right of it. The kind of thing you might get in a newspaper layout.
+
+                    But web developers quickly realised that you can float anything, not just images, so the use of float broadened. Our fancy paragraph example from earlier in the course shows how you can use float in the creation of a fun drop-cap effect.
+                    
+                    Floats have commonly been used to create entire web site layouts featuring multiple columns of information floated so they sit alongside one another (the default behaviour would be for the columns to sit below one another, in the same order as they appear in the source). There are newer, better layout techniques available and so use of floats in this way should be regarded as a legacy technique.</dd>
+
+            <div style="display: block; padding: 1rem; background-color: blanchedalmond; width: 90%;margin: 0 auto;">
+                    <h1>Simple float example</h1>
+
+                    <div class="box">Float</div>
+                    
+                    <p class="special">So let's think about how the float works — the element with the float set on it (the div element in this case) is taken out of the normal layout flow of the document and stuck to the left hand side of its parent container (body, in this case). Any content that comes below the floated element in the normal layout flow will now wrap around it, filling up the space to the right-hand side of it as far up as the top of the floated element. There, it will stop.</p>
+                    
+                
+                    <p class="clear">Floating the content to the right has exactly the same effect, but in reverse — the floated element will stick to the right, and the content will wrap around it to the left. Try changing the float value to right and replace margin-right with margin-left in the last ruleset to see what the result is.</p>
+                    
+                    
+                    <p>While we can add a margin to the float to push the text away, we can't add a margin to the text to move it away from the float. This is because a floated element is taken out of normal flow, and the boxes of following items actually run behind the float. You can demonstrate this by making some changes to your example.</p>
+                    
+                    <p>Add a class of special to the first paragraph of text, the one immediately following the floated box, then in your CSS add the following rules. These will give our following paragraph a background color.</p>
+            </div>
+
+
+            <dd>Here is the example of <span style="color: pink">"Clearing boxes wrapped around a float"</span></dd>
+            <div style="display: block; padding: 1rem; background-color: blanchedalmond; width: 90%;margin: 0 auto;">
+                    <h1>Simple float example</h1>
+
+                    <div class="wrapper">
+                        <div class="box">Float</div>
+                        <p>You now know how to clear something following a floated element, 
+                            but take a look at what happens if you have a tall float and a short paragraph, 
+                            with a box wrapped around both elements. 
+                            Change your document so that the first paragraph and our floated box are wrapped with a div with a class of wrapper.
+                        </p>
+                    </div>
+                    <p>Once again, this is because the float has been taken out of normal flow. 
+                            Clearing the following element doesn't help with this box clearing problem, 
+                            where you want the bottom of the box to wrap the floated item and wrapping content even if the content is shorter. 
+                            There are three potential ways to deal with this, two of which work in all browsers — yet are slightly hacky — and a third new way that deals with this situation properly.</p>
+            </div>  
+            
+            <h2>HOW DO WE FIX IT ?</h2>
+            <div style="display: block; padding: 1rem; background-color: blanchedalmond; width: 90%;margin: 0 auto;">
+                    <h1>Simple float example</h1>
+
+                    <div class="wrapper">
+                        <div class="box">Float</div>
+                        <p>You now know how to clear something following a floated element, 
+                            but take a look at what happens if you have a tall float and a short paragraph, 
+                            with a box wrapped around both elements. 
+                            Change your document so that the first paragraph and our floated box are wrapped with a div with a class of wrapper.
+                        </p>
+                    </div>
+                    <p>Once again, this is because the float has been taken out of normal flow. 
+                            Clearing the following element doesn't help with this box clearing problem, 
+                            where you want the bottom of the box to wrap the floated item and wrapping content even if the content is shorter. 
+                            There are three potential ways to deal with this, two of which work in all browsers — yet are slightly hacky — and a third new way that deals with this situation properly.</p>
+                    <p class="block"><span style="color: pink;">The clear fix heck:</span> way that this situation has traditionally been dealt with is to use something known as a "clearfix hack". 
+                        This involves inserting some generated content after the box which contains the float and wrapping content,
+                         and setting that to clear both.</p>
+
+                         <p class="block"><span style="color: pink;">Using Overflow:</span>Remove the clearfix CSS you added in the last section, and instead add overflow: auto to the rules for wrapper. Once again, the box should clear.This example works by creating what is known as a block formatting context (BFC). This is like a mini layout inside your page, inside which everything is contained, therefore our floated element is contained inside the BFC and the background runs behind both items. This will usually work, however in certain cases you might find unwanted scrollbars or clipped shadows due to unintended consequences of using overflow.</p>
+
+                             <p class="block"><span style="color: pink;">flow root:</span>The modern way of solving this problem is to use the value flow-root of the display property. This exists only to create a BFC without using hacks — there will be no unintended consequences when you use it. Remove overflow: auto from your .wrapper rule and add display: flow-root. Assuming you have a supporting browser, the box will clear.</p>
+            </div>   
+        </dl>
+    </div>
+
+    <div>
+        <h1>Positioning</h1>
+        <p>The whole idea of positioning is to allow us to override the basic document flow behavior described above, to produce interesting effects. What if you want to slightly alter the position of some boxes inside a layout from their default layout flow position, to give a slightly quirky, distressed feel? Positioning is your tool. Or if you want to create a UI element that floats over the top of other parts of the page, and/or always sits in the same place inside the browser window no matter how much the page is scrolled? Positioning makes such layout work possible.</p>
+        <dl>
+            <dt>Static Positioning</dt>
+            <dd>Static positioning is the default that every element gets — it just means "put the element into its normal position in the document layout flow — nothing special to see here."</dd>
+
+            <dt>Relative Positioning</dt>
+            <dd>Relative positioning is the first position type we'll take a look at. This is very similar to static positioning, except that once the positioned element has taken its place in the normal layout flow, you can then modify its final position, including making it overlap other elements on the page.</dd>
+
+            <dt>Absolute Positioning</dt>
+            <dd>Absolute positioning brings very different results.</dd>
+
+            <dt>Z-index</dt>
+            <dd>All this absolute positioning is good fun, but there is another thing we haven't considered yet — when elements start to overlap, what determines which elements appear on top of which other elements? In the example we've seen so far, we only have one positioned element in the positioning context, and it appears on the top, since positioned elements win over non-positioned elements. What about when we have more than one?</dd>
+            
+            <div style="
+            position: relative;
+            display: block;
+            padding: 1rem;
+            margin: 10px;
+            background: yellow;
+            border: solid 2px royalblue;
+            color: black;"
+            >
+                <h2>Here are some examples of positioning blocks in the pages</h2>
+                <p class="block ">top, bottom, left, and right are used alongside position to specify exactly where to move the positioned element to.</p>
+                <p class="block block--relative"
+                   style="left: 20px;
+                          top: 20px;"
+                >If you save and refresh at this stage, you won't see a change in the result at all.  So how do you modify the element's position? You need to use the top, bottom, left, and right properties, which we'll explain in the next section.</p>
+                <p class="block">Cool, huh? Ok, so this probably wasn't what you were expecting — why has it moved to the bottom and right if we specified top and left? Illogical as it may initially sound, this is just the way that relative positioning works — you need to think of an invisible force that pushes the specified side of the positioned box, moving it in the opposite direction. So for example, if you specify top: 30px;, a force pushes the top of the box, causing it to move downwards by 30px.</p>
+
+                <p class="block">An absolutely positioned element no longer exists in the normal document layout flow. Instead, it sits on its own layer separate from everything else. This is very useful: it means that we can create isolated UI features that don't interfere with the position of other elements on the page. </p>
+
+                <p class="block block--absolute"
+                   style="left:3rem;top: 12rem;">Second, notice that the position of the element has changed — this is because top, bottom, left, and right behave in a different way with absolute positioning. Instead of specifying the direction the element should move in, they specify the distance the element should be from each containing element's sides. So in this case, we are saying that the absolutely positioned element should sit 30px from the top of the "containing element", and 30px from the left.</p>
+            
+                <p class="block">Which element is the "containing element" of an absolutely positioned element? This is very much dependent on the position property of the ancestors of the positioned element </p>
+            
+                <p class="block">If no ancestor elements have their position property explicitly defined, then by default all ancestor elements will have a static position. The result of this is, the absolutely positioned element will be contained in the initial containing block. The initial containing block has the dimensions of the viewport, and is also the block that contains the <html> element. Simply put, the absolutely positioned element will be contained outside of the <html> element, and be positioned relative to the initial viewport. </p>
+            
+                <p class="block">The positioned element is nested inside the <body> in the HTML source, but in the final layout, it is 30px away from the top and left of the edge of the page. We can change the positioning context — which element the absolutely positioned element is positioned relative to.</p>
+            </div>
+
+
+            <h1>Here are some examples of Z-index</h1>
+            <div style="
+            position: relative;
+            display: block;
+            padding: 1rem;
+            margin: 10px;
+            background: yellow;
+            border: solid 2px royalblue;
+            color: black;"
+            >
+            <div class="block block--absolute" style="color:red">I am the last one</div>
+            <div class="block block--absolute" style="color:orange">I am the nineth one</div>
+            <div class="block block--absolute" style="color:yellow">I am the eighth one</div>
+            <div class="block block--absolute" style="color:green">I am the seventh one</div>
+            <div class="block block--absolute" style="color:blue">I am the sixth one</div>
+            <div class="block block--absolute" style="color:pink">I am the fifth one</div>
+            <div class="block block--absolute" style="color:purple"> I am the fourth one</div>
+            <div class="block block--absolute" style="color:powderblue">I am the third one</div>
+            <div class="block block--absolute" style="color:salmon">I am the second one</div>
+            <div class="block block--absolute" style="color:silver">I am the first one</div>
+            </div>
+        </dl>
+    </div>
+</body>
+</html>

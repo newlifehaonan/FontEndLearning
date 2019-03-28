@@ -1,0 +1,253 @@
+html {
+    font-size: 24px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+div, p, span {
+    font-size: 1rem
+}
+
+.text_bold {
+    font-weight: bold
+}
+
+.pre-inline {
+    white-space: pre-line
+}
+
+.shadow {
+    text-shadow: -1px -1px 1px #aaa,
+             0px 4px 1px rgba(0, 0, 0, 0.5),
+             4px 4px 5px rgba(0,0,0,0.7),
+             0px 0px 7px rgba(0,0,0,0.4)
+}
+
+dd span {
+    background: #aaa
+}
+
+[link-class^="pseudo"]{
+    text-decoration: none;
+    /* display: block; */
+}
+
+a[link-class="pseudo-simple"]::after{
+    content: "->";
+    color: red;
+    text-decoration: none;
+    margin-left: 0.5rem;
+}
+
+a[link-class="pseudo-img"]{
+    background: url("./asset/link_red.png") no-repeat 100% 0;
+    padding-right: 1.5rem;
+}
+
+p span[tips]{
+    color: blue;
+    cursor: help;
+    position: relative;
+    text-decoration: underline;
+}
+
+p span[tips]:hover::after{
+    position: absolute;
+    top: 1.5rem;
+    left: 0rem;
+    content: attr(tips);
+    z-index: 1;
+    min-width: 200px;
+    border: 1px #aaaaaa solid;
+    border-radius: 10px;
+    background-color: rgb(214, 225, 65);
+    padding: 12px;
+    color: #000000;
+    font-size: 14px;
+    z-index: 1;
+}
+
+.ul_styled_list {
+    list-style: none;
+    width: 100%;
+}
+
+.li_styled_list {
+    background-color: yellow;
+    padding: 0;
+    display: inline
+}
+
+.a_styled_list {
+    width: 19.5%;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    line-height: 3;
+
+    /* The difference between inline and inline block, inline block keeps all heigh and width, inline strip out all of that and only wraps the text*/
+    display: inline-block;
+    margin-right: 0.625%;
+    outline: none;
+}
+
+.li_styled_list:last-child a{
+    margin-right: 0;
+}
+
+.li_styled_list:link, .li_styled_list:visited, .li_styled_list:focus {
+    cursor: pointer;
+    background: yellow;
+}
+
+.li_styled_list:hover {
+    background: orange;
+}
+
+.li_styled_list:active {
+    background: red;
+    color: white;
+}
+
+
+.background {
+    padding: 1rem;
+    font-size: 1rem;
+    color: black;
+    display: block;
+}
+
+.background--color {
+    background-color: greenyellow;
+}
+
+.background--color-linear {
+    background-image: linear-gradient(to bottom, red, yellow);
+}
+
+.background--image {
+    background-image: url("./asset/pea.png")
+}
+
+.background--image-nonrepeat {
+    background-repeat: no-repeat;
+}
+
+.background--image-right {
+    background-position: 99% center;
+}
+
+.background--image-large {
+    background-size: 2rem 2rem;
+}
+
+.block {
+    border: red solid 2px;
+    background: #aaaaaa;
+    padding: 5px;
+    margin: 5px;
+}
+
+article {
+    flex: 1 400px;
+}
+
+button {
+    font-size: 18px;
+    line-height: 1.5;
+    width: 15%;
+}
+
+article:nth-of-type(5){
+    flex: 1 800px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+article:nth-of-type(6){
+    flex: 1 800px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+article:nth-of-type(7){
+    flex: 1 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+article:nth-of-type(8){
+    flex: 1 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+article:nth-of-type(9){
+    flex: 1 800px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+article:nth-of-type(9) button{
+    flex: 1 100px;
+}
+
+article:nth-of-type(9) button:last-child{
+    flex: 1 800px;
+}
+
+
+.box {
+    width: 500px;
+    height: 500px;
+    float: left;
+    margin-right: 15px;
+    border-radius: 5px;
+    background-color: rgb(207,232,220);
+    padding: 1em;
+  }
+
+.special {
+    background-color: rgb(79,185,227);
+    padding: 10px;
+    color: #fff;
+}
+
+
+/* by doing this, it will clear the floated item on the left */
+.clear {
+    clear: left;
+}
+
+.wrapper {
+    background-color: rgb(79,185,227);
+    padding: 10px;
+    color: #fff; 
+    /* this is one way of doing so */
+    /* display: flow-root; */
+}
+
+.wrapper::after{
+    content: "";
+    display: block;
+    background-color: red;
+    z-index: 1;
+    clear: both;
+}
+
+
+.block--relative {
+    position: relative;
+    background-color: aqua;
+}
+
+.block--absolute {
+    position: absolute;
+    background-color: coral;
+}
